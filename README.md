@@ -12,7 +12,8 @@ This program parses a CSV file containing customer records and returns a Custome
 # Usage
 1. Clone the repository:
 
-git clone https://github.com/your-username/csv-parser.git
+git clone https://github.com/your-username/repository.git
+https://github.com/bensonmogambi/PowerGen_PG_Software_Assignment.git
 
 2. Navigate to the project directory:
 
@@ -34,11 +35,17 @@ Benson Mogambi,1990-01-01,+123456789,987654321,1,235
 Treva Okumu,1985-05-10,+987654321,,2,772
 
 ~ Each row corresponds to a customer record.
+
 ~ Commas are used to separate the fields.
+
 ~ The fields should be in the specified order: Name, DoB, Phone, NationalID, CountryID, SiteCode.
+
 ~ The NationalID field is optional.
+
 ~ The CountryID field should be an integer representing the country (1: Kenya, 2: Sierra Leone, 3: Nigeria).
+
 ~ The SiteCode field should be an integer representing the site ID for the corresponding country.
+
 
 # Output
 
