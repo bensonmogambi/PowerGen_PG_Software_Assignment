@@ -12,7 +12,7 @@ This program parses a CSV file containing customer records and returns a Custome
 # Usage
 1. Clone the repository:
 
-git clone https://github.com/your-username/repository.git
+git clone
 https://github.com/bensonmogambi/PowerGen_PG_Software_Assignment.git
 
 2. Navigate to the project directory:
