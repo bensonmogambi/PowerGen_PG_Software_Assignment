@@ -1,0 +1,74 @@
+# PG Software Assignment
+
+This is a programming assignment designed to assess your skills as part of your application to join the PowerGen Software team. 
+
+The assignment should ideally be attempted in Elixir, but I will accept submissions in a different language that you are more familiar with. 
+
+I have left some of the instruction deliberately vague, to reflect the reality of software development. However please don’t hesitate to reach out if you need clarification in order to complete the task. 
+
+# Task
+
+Write a program that takes a CSV file as input, and returns either a Customer record or an error for each row. 
+
+A customer record has the following fields:
+
+```json
+Name: string
+Date of birth: date
+Telephone number: string
+ID number: string
+Country ID: integer 
+Site ID: integer 
+```
+
+The input file will always be a valid CSV, however you cannot rely on the formatting of individual fields. Your challenge is to correctly parse as many records as possible. If you cannot transform the input data into the required format, return an error for that row. Your program must never crash due to an incorrectly formatted field.
+
+## Format rules
+
+The returned records must conform to the following:
+
+- Name: a non-empty string
+- Date of birth: An ISO 8601 date string
+- Telephone number: a string of the format `254759635432`
+- ID number: optional. a string.
+- Country ID: an integer, on of `1: Kenya, 2: Sierra Leone, 3: Nigeria`
+- Assume the following sites exist:
+
+```json
+Kenya: 235, 657, 887
+Sierra Leone: 772, 855
+Nigeria: 465, 811, 980
+```
+
+## Example
+
+Given the input file:
+
+```json
+Name,DoB,Phone,NationalID,CountryID,SiteCode
+Simon Kamau,1963-08-15,+254705611231,13424422,1,235
+Mohammed Issay,1978-01-02,+23221345678,28372821,2,657
+```
+
+You should return (in the format of your choice):
+
+```json
+[
+	{
+		Name: "Simon Kamau",
+		DoB: "1963-08-15",
+		Phone: "254705611231",
+		NationalID: "13424422",
+		CountryID: 1,
+		SiteCode: 235
+	},
+	{
+		error: "Site code 657 does not exist in Sierra Leone.",
+		line: 2
+	}
+]
+```
+
+## Submission
+
+Upload your code to a public git repository and share the URL. The repo should include instructions for running your program in its README.
