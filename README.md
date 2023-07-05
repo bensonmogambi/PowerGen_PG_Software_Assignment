@@ -17,12 +17,12 @@ https://github.com/bensonmogambi/PowerGen_PG_Software_Assignment.git
 
 2. Navigate to the project directory:
 
-cd csv-parser
+  cd csv-parser
 
 3. Place the input CSV file in the project directory.
 
 4. Run the program:
-python main.py
+  python main.py
 
 5. The program will parse the CSV file and display the valid customer records and any errors encountered during parsing.
 
