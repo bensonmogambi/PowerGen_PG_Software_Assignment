@@ -62,4 +62,27 @@ Customer(name='John Doe', date_of_birth='1990-01-01', telephone_number='+1234567
 Errors:
 Line 3: Site code 772 does not exist in the specified country.
 
+# For Personal Use.
 
+Code handles the following errors:
+Empty or whitespace rows: It detects and logs an "Empty row" error for any rows in the CSV file that are empty or contain only whitespace.
+
+Missing name: It logs a "Missing name" error if the Name field in a row is empty.
+
+Invalid date of birth: It logs an "Invalid date of birth" error if the DoB field does not match the expected ISO 8601 date format (YYYY-MM-DD) or if the date is not a valid date (e.g., invalid month or day).
+
+Invalid telephone number: It logs an "Invalid telephone number" error if the Phone field does not match the expected format of 12 digits.
+
+Invalid ID number: If the NationalID field is provided, the code can log an "Invalid ID number" error if the is_valid_id_number function returns False (although the function is currently a placeholder and assumes all ID numbers are valid).
+
+Invalid country ID: It logs an "Invalid country ID" error if the CountryID field is missing, not a digit, or not one of the specified values (1, 2, or 3).
+
+Invalid site code: It logs an "Invalid site code" error if the SiteCode field is missing, not a digit, or not a valid site code for the corresponding country.
+
+Duplicate customer record: It detects and logs a "Duplicate customer record" error if a customer with the same combination of name and date of birth already exists.
+
+File not found: It handles the FileNotFoundError exception and prints an appropriate error message if the input file is missing or cannot be found.
+
+Additionally, the code includes generic error handling for csv.Error during parsing. If any error occurs while parsing the CSV file, it logs a "CSV parsing error" with the line number and the exception message.
+
+These error handling mechanisms help improve the robustness of the code by gracefully handling various invalid input scenarios and preventing crashes or unexpected behavior.
